@@ -1,5 +1,4 @@
 # helloWorld
-Entering the world of  Git
-basically this line has been added in the branch
+Checking out the sequelize module with sqlite3 database for further web development
 
 Ihave added this line  has been added from the samsung laptop 
