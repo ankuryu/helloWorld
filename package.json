@@ -1,0 +1,15 @@
+{
+  "name": "tstsequelize",
+  "version": "1.0.0",
+  "description": "To test the Sequelize Module with Sqlite3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "sequelize": "*",
+    "sqlite3": "*"
+  },
+  "author": "Sunil Gandhi",
+  "license": "ISC"
+}
