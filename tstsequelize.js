@@ -1,3 +1,4 @@
+/* jshint  esversion:6 */
 const Sequelize = require('sequelize');
 const sequel = new Sequelize('sqlite:./db/stkcsm18.db3');
 sequel
@@ -21,10 +22,10 @@ sequel.sync().then(function(){
 		name: 'LEADER'
 	});
 		Masmfg.findAll().then(mfgs => {
-		console.log(mfgs.length)
+		console.log(mfgs.length);
 	});
-})
-   Masmfg.query('Select * from masmfg')
+}) ;
+   Masmfg.query('Select * from masmfg');
 /*sequel.close().then(function() {
 	console.log("connection closed");
 }); */
