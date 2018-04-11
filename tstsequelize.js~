@@ -12,13 +12,13 @@ sequel
 
 const Quotop = sequel.define('quotop',
 	{
-		id: {type:Sequelize.INTEGER },
+		id: {type:Sequelize.INTEGER,primaryKey:true },
 		qno: {type: Sequelize.STRING},
 		qdt:{type:Sequelize.DATE},
 		pname: {type: Sequelize.STRING},
 		paddr:{type:Sequelize.STRING},
 		enqno:{type:Sequelize.STRING},
-		enqdt:{type:Sequelize.STRING},
+		enqdt:{type:Sequelize.DATE},
 		tel:{type:Sequelize.STRING},
 		email:{type:Sequelize.STRING}
 	},{
@@ -37,7 +37,7 @@ const Quotop = sequel.define('quotop',
 }) ; */
 const Quoitm = sequel.define('quoitm',
 	{
-		id: {type:Sequelize.INTEGER },
+		id: {type:Sequelize.INTEGER,primaryKey:true },
 		qno: {type: Sequelize.STRING},
 		sr:{type:Sequelize.INTEGER},
 		desc: {type: Sequelize.STRING},
@@ -56,7 +56,7 @@ const Quoitm = sequel.define('quoitm',
 
 const Quotc= sequel.define('quotc',
 	{
-		id: {type:Sequelize.INTEGER },
+		id: {type:Sequelize.INTEGER,primaryKey: true },
 		qno: {type: Sequelize.STRING},
 		vld:{type:Sequelize.INTEGER},
 		vldunt:{type:Sequelize.STRING},	
@@ -77,18 +77,21 @@ const Quotc= sequel.define('quotc',
 	timestamps: false});
 sequel.sync().then(function(){
 	Quotop.create({
-		qno: '00001',
-		qdt: '01/04/2018',
-		pname: 'Kamlesh Corporation',
-		paddr: '89, Nagdevti Street, Mumbai 400 003',
+		qno: '00007',
+		qdt: '2018-04-02',
+		pname: 'Sanghvi Bearing ',
+		paddr: '53, Nagdevti Street, Mumbai 400 003',
 	});
 		Quotop.findAll().then(quotations=> {
 		console.log(quotations.length);
+                sequel.query('Select * from quotop;').then(quote=>{console.log(quote);
+			sequel.close().then(()=>{console.log("connection closed");});
+		});
 	});
 }) ;
 
 
-   Quotop.query('Select * from quotop');
+
 /*sequel.close().then(function() {
 	console.log("connection closed");
 }); */
