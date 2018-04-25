@@ -9,7 +9,6 @@
   "dependencies": {
     "sequelize": "*",
     "sqlite3": "*"
-    "qs":"*"
   },
   "author": "Sunil Gandhi",
   "license": "ISC"
